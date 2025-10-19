@@ -204,8 +204,8 @@ typedef volatile sint_64    v_sint_64;
 /*  Target-specific library compatibility issues                            */
 /* ======================================================================== */
 
-#if defined (__APPLE__) && defined(__MACH__) && !defined(macosx)
-# define macosx
+#if defined(__APPLE__) && defined(__MACH__)
+# define JZ_PLATFORM_MACOS 1
 #endif
 
 #ifdef linux
@@ -268,7 +268,7 @@ typedef volatile sint_64    v_sint_64;
 # define NO_GETCWD
 #endif
 
-#ifdef macosx
+#ifdef JZ_PLATFORM_MACOS
 # define NO_RAND48
 # define NO_INOUT
 # define NO_GETOPT_LONG
@@ -392,7 +392,7 @@ typedef volatile sint_64    v_sint_64;
 #define CGC_DLL
 #endif
 
-#if defined(macosx)
+#if defined(JZ_PLATFORM_MACOS)
 #define CGC_SUPPORTED
 #define CGC_THREAD
 #endif
@@ -457,6 +457,7 @@ typedef volatile sint_64    v_sint_64;
 #  define M_PI (3.14159265358979323846)
 # endif
 #endif
+
 
 /*
  * ============================================================================

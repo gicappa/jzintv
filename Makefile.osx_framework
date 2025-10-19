@@ -48,7 +48,7 @@ RM = rm -f
  CC  = $(P) gcc $(A)
  CXX = $(P) g++ $(A)
 
-DEF_FLAGS =  -Dmacosx
+DEF_FLAGS =  -DJZ_PLATFORM_MACOS
 
 #OPT_FLAGS = -ggdb 
 #OPT_FLAGS = -O
@@ -119,4 +119,3 @@ SDLMain.o: SDLMain.m SDLMain.h
 	$(CXX) -o $@  $(CXXFLAGS) -c $<
 
 build: jzIntv SDK-1600
-

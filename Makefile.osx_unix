@@ -44,7 +44,7 @@ RM = rm -f
 # DEF_FLAGS = -DDIRECT_INTV2PC
 #DEF_FLAGS = -DNEED_INOUT
 #My system doesn't have stricmp --fri. Aug. 6 JJT
-DEF_FLAGS =  -Dmacosx
+DEF_FLAGS =  -DJZ_PLATFORM_MACOS
 #-DNO_STRICMP
 #OPT_FLAGS = -ggdb 
 #OPT_FLAGS = -O
@@ -79,6 +79,7 @@ all: $(OBJS) $(PROG)
 ##############################################################################
 ## Makefile.common includes all the subMakefiles and such
 ##############################################################################
+OBJS += pads/pads_cgc_linux.o
  include Makefile.common
  
 $(PROG): $(OBJS) libjzintv_common.a
@@ -101,5 +102,3 @@ clean:
 	$(CC) -o $@ $(CFLAGS) -c $<
 
 build: jzIntv SDK-1600
-
-

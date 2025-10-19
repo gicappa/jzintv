@@ -35,12 +35,12 @@ int pad_cgc_init
     return pad_cgc_win32_init(pad, addr, cgc_num);
 #endif
 
-#if defined(linux) || defined(macosx)
+#if defined(linux) || (defined(__APPLE__) && defined(__MACH__))
     UNUSED(cgc_num);
     return pad_cgc_linux_init(pad, addr, cgc_dev);
 #endif
                   
-#if !defined(WIN32) && !defined(linux) && !defined(macosx)
+#if !defined(WIN32) && !defined(linux) && !(defined(__APPLE__) && defined(__MACH__))
     UNUSED(pad); UNUSED(addr); UNUSED(cgc_num); UNUSED(cgc_dev);
     fprintf(stderr, "Error:  CGC not supported on this platform.\n");
     return -1;

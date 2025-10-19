@@ -500,7 +500,7 @@ cfg_kbd_t  cfg_key_bind[] =
 { "QUIT",   {   "QUIT",         "QUIT",         "QUIT",         "QUIT"      }},
 { "F1",     {   "QUIT",         "QUIT",         "QUIT",         "QUIT"      }},
 { "ESCAPE", {   "NA",           "NA",           "KEYB_ESC",     "NA"        }},
-#ifdef macosx
+#if defined(__APPLE__) && defined(__MACH__)
 { "F3",     {   "WTOG",         "WTOG",         "WTOG",         "WTOG"      }},
 { "LCMD",   {   "PSH3",         "PSH3",         "PSH3",         "PSH3"      }},
 { "RCMD",   {   "PSH3",         "PSH3",         "PSH3",         "PSH3"      }},
